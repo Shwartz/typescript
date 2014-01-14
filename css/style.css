@@ -1,0 +1,10 @@
+#wrap {
+  border: 1px solid #777;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  width: 800px; }
+
+#result {
+  color: #30782d;
+  padding: 10px; }
