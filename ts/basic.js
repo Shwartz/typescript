@@ -1,21 +1,23 @@
 /**
 * Created by Andris on 13/01/14.
 */
+
 var Student = (function () {
-    function Student(firstName, middleInitial, lastName) {
+    function Student(firstName, lastName) {
         this.firstName = firstName;
-        this.middleInitial = middleInitial;
         this.lastName = lastName;
-        this.fullName = firstName + " " + middleInitial + " " + lastName;
     }
+    Student.prototype.toString = function () {
+        return this.firstName + ' ' + this.lastName + '!';
+    };
     return Student;
 })();
 
 function greeter(person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
+    return "Hello, " + person;
 }
 
-var user = new Student("Jane", "ab", "user");
+var user = new Student('Bar', 'Foo');
 var result = document.getElementById('result');
 
 result.innerHTML = greeter(user);

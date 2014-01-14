@@ -2,23 +2,27 @@
  * Created by Andris on 13/01/14.
  */
 
-class Student {
-    fullName: string;
-    constructor(public firstName, public middleInitial, public lastName) {
-        this.fullName = firstName + " " + middleInitial + " " + lastName;
+interface Person {
+    firstName:string;
+    lastName:string;
+}
+
+class Student implements Person {
+    constructor(public firstName:string, public lastName:string) {
+
+    }
+
+    toString() {
+        return this.firstName + ' ' + this.lastName + '!';
     }
 }
 
-interface Person {
-    firstName: string;
-    lastName: string;
-}
 
 function greeter(person: Person) {
-    return "Hello, " + person.firstName + " " + person.lastName;
+    return "Hello, " + person;
 }
 
-var user = new Student("Jane", "ab", "user");
+var user = new Student('Bar', 'Foo');
 var result = document.getElementById('result');
 
 result.innerHTML = greeter(user);
